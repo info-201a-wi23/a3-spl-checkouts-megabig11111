@@ -1,0 +1,1 @@
+haddix_df <- read.csv("Checkouts_by_Title.csv", stringsAsFactors = FALSE)

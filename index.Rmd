@@ -5,80 +5,58 @@ output: html_document
 
 ### Introduction
 
-An introduction of the data and a description of the trends/books/items you are choosing to analyze (and why!)
+The data is Seattle Public Library checkouts from April 2005 to January 2023 from one of my favorite sci-fi authors, Margarette Peterson Haddix. I want to analyze how the number of checkouts increases or decreases over time because I want to see if there were certain years where Haddix had a lot of popularity. This is the same reason for wanting to find the year with the most Haddix book checkouts. I also want to see the number of books published over time to see which years was Haddix the most and least productive in writing. I also want to
+see which books had the most and least checkouts overall, so I find out which books are the most and least popular within those 18 years of publishing. 
 
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
-
-These will likely be calculated using your DPLYR skills, answering questions such as:
-
-- What is the average number of checkouts for each item?
-- What is the month or year with the most/least checkouts for a book that you're interested in?
-- What is the month or year with the most/least checkouts for ebooks?
-- How has the number of print book checkouts changed over time?
-
-Feel free to calculate and report values that you find relevant.
+1. Total number of books documented from checkouts from Haddix from April 2005 to January 2023 - 3604
+2. Total number of years Haddix books were published from April 2005 to January 2023 - 24
+3. The most number of checkouts per book - 25
+4.The year with the most number of Haddix book checkouts - 2011
+5. The year with the least number of Haddix book checkouts - 2023
+6. The average number of Haddix book checkouts per year - 683
 
 ### The Dataset
 
 - Who collected/published the data?  
-- What are the parameters of the data (dates, number of checkouts, kinds of books, etc.)?
-- How was the data collected or generated?  
-- Why was the data collected?  
-- What, if any, ethical questions do you need to consider when working with this data?  
-- What are possible limitations or problems with this data?   (at least 200 words)
+The Seattle Public Library (SPL) collected and published this dataset.
 
+- What are the parameters of the data (dates, number of checkouts, kinds of books, etc.)?
+  There are 3604 observations and 12 features in the dataset. They are UsageClass (Physical or Digital), CheckoutType (what system was used for checkout), BookType (book, ebook, audiobook), CheckoutYear & CheckoutMonth, Checkouts (Number of Checkouts), Title, ISBN, Creator, Subjects, Publisher, and Publication Year.
+   
+- How was the data collected or generated?  
+  SPL collects both physical and digital checkouts. Physical checkouts were collected by Legrady Artwork data archives, Horizon ILS, and other sources. Digital checkouts were collected by Overdrive, Hoopla, and RGDigital data.
+   
+- Why was the data collected?  
+  The Seattle Public Library (SPL) provided this dataset of checkouts to the public to not only keep a record of checkouts, but also provide a deeper understanding of what Seattle readers like and on any given timeframe. 
+
+- What, if any, ethical questions do you need to consider when working with
+this data?  
+  Whether or not the data includes personal information about those who checked out books. 
+
+- What are possible limitations or problems with this data?   (at least 200 words)
+  Checkouts are limited to the Seattle Public Library, so it is only representative of SPL readers who check out books. Just because someone checked out a book from the library does not mean that they show interest in it; books may be checked out for many reasons other than showing interest, such as having a gift, or having a required book for school. Also, the data is updated on the sixth day of every month, so the data is not as current as data updated every day. The data only counts the first checkout, so any renews, like number of times the book was renewed, are not listed.
 
 ### First Trends Over Time Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+This shows the relationship between sci-fi/juvenile fiction checkouts and year (Apr 2005-Jan 2023), so one can see how those two genres compare over the years in terms of popularity. Juvenile peaked in checkouts in 2011, while Sci-Fi peaked in checkouts in 2012.
 
-The first chart that you will create and include will show the trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
+``````{r, echo = FALSE, warning = FALSE, code = readLines("chart1.R")}
+plot(chart1)
 ```
 
 ### Second Trends Over Time Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+This shows the number of books published under Sci-Fi and Juvenile Fiction for each publication year (Apr 2005-Jan 2023). It shows that Haddix published her books consistently from 2012 to 2019 for both genres.
 
-The second chart that you will create and include will show another trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
 
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+``````{r, echo = FALSE, code = readLines("chart2.R")}
+plot(chart2)
 ```
 
 ### Your Choice
 
-The last chart is up to you. It could be a line plot, scatter plot, histogram, bar plot, stacked bar plot, and more. Here are some requirements to help guide your design:
-
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear legend title
-
-Here's an example of how to run an R script inside an RMarkdown file:
 
 ``````{r, echo = FALSE, code = readLines("chart2_example.R")}
 ```
